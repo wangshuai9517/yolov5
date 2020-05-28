@@ -36,9 +36,10 @@ For business inquiries and professional support requests please visit us at http
 
 ## Requirements
 
-Python 3.7 or later with all `pip install -U -r requirements.txt` packages including `torch >= 1.5`. Docker images come with all dependencies preinstalled. Docker requirements are: 
-- Nvidia Driver >= 440.44
-- Docker Engine - CE >= 19.03
+Python 3.7 or later with all `requirements.txt` dependencies installed, including `torch >= 1.5`. To install run:
+```bash
+pip install -U -r requirements.txt
+```
 
 ## Tutorials
 
