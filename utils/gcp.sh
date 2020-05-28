@@ -10,7 +10,7 @@ then
   # git clone https://github.com/NVIDIA/apex && cd apex && pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" . --user && cd .. && rm -rf apex
   # sudo conda install -yc conda-forge scikit-image pycocotools
   python3 -c "from yolov3.utils.google_utils import gdrive_download; gdrive_download('1rrL-Jbc68iHiGjXOYc8u9tKfFiOX21Tn','coco2017.zip')"
-  sudo docker pull ultralytics/coco:v186
+  sudo docker pull ultralytics/coco:198
 
   # Add 64GB swap
   sudo fallocate -l 64G /swapfile
@@ -21,16 +21,8 @@ then
 
   # sudo reboot now
 fi
-n=196 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s.yaml --bucket ult/coco --name $n --data data/coco.yaml
+n=198 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s_csp2.yaml --bucket ult/coco --name $n --data data/coco.yaml
 
-
-# Mount local SSD
-lsblk
-sudo mkfs.ext4 -F /dev/nvme0n1
-sudo mkdir -p /mnt/disks/nvme0n1
-sudo mount /dev/nvme0n1 /mnt/disks/nvme0n1
-sudo chmod a+w /mnt/disks/nvme0n1
-cp -r coco /mnt/disks/nvme0n1
 
 # Evolve coco
 sudo -s
@@ -170,7 +162,10 @@ n=193 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --
 
 n=194 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s_csp.yaml --bucket ult/coco --name $n --data data/coco.yaml
 n=195 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s_csp.yaml --bucket ult/coco --name $n --data data/coco.yaml
+
 n=196 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s_csp.yaml --bucket ult/coco --name $n --data data/coco.yaml
+n=197 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s_csp1.yaml --bucket ult/coco --name $n --data data/coco.yaml
+n=198 && t=ultralytics/coco:v$n && sudo docker pull $t && sudo docker run -it --gpus all --ipc=host -v "$(pwd)"/coco:/usr/src/coco $t python3 train.py --epochs 50 --batch 64 --weights '' --cfg models/yolov5s_csp2.yaml --bucket ult/coco --name $n --data data/coco.yaml
 
 
 
