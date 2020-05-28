@@ -7,7 +7,7 @@
 #     /yolov5
 
 
-# train and val datasets (image directory or *.txt file with list of images)
+# train and val datasets (image directory or *.txt file with image paths)
 train: ../coco128/images/train2017/
 valid: ../coco128/images/train2017/
 
