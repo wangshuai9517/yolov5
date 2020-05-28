@@ -191,10 +191,10 @@ def test(data,
 
     # Save JSON
     if save_json and map50 and len(jdict):
-        print('\nCOCO mAP with pycocotools...')
         imgIds = [int(Path(x).stem.split('_')[-1]) for x in dataloader.dataset.img_files]
         f = 'detections_val2017_%s_results.json' % \
             (weights.split(os.sep)[-1].replace('.pt', '') if weights else '')  # filename
+        print('\nCOCO mAP with pycocotools... saving %s...' % f)
         with open(f, 'w') as file:
             json.dump(jdict, file)
 
