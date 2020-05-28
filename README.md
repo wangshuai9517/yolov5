@@ -1,4 +1,3 @@
-
 <a href="https://apps.apple.com/app/id1452689527" target="_blank">
 <img src="https://user-images.githubusercontent.com/26833433/82944393-f7644d80-9f4f-11ea-8b87-1a5b04f555f1.jpg" width="1000"></a>
 &nbsp
@@ -10,6 +9,7 @@ Updates:
 - **May 24, 2020**: Training yolov5s/x and yolov3-spp. yolov5m/l suffered early overfitting and also code 137 early docker terminations, cause unknown. yolov5l underperforms yolov3-spp due to earlier overfitting, cause unknown.
 - **April 1, 2020**: Begin development of a 100% pytorch scaleable yolov3/4-based group of future models, in small, medium, large and extra large sizes, collectively known as yolov5. Models will be defined by new user-friendly yaml-based configuration files for ease of construction and modification. Datasets will likewise use yaml configuration files. New training platform will be simpler use, harder to break, and more robust to training a wider variety of custom dataset.
 
+
 ## Ultralytics Professional Support
 
 Ultralytics is a U.S.-based particle physics and AI startup with over 6 years of expertise supporting government, academic and business clients. We offer a wide range of vision AI services, spanning from simple expert advice up to delivery of fully customized, end-to-end production solutions, including:
@@ -19,6 +19,7 @@ Ultralytics is a U.S.-based particle physics and AI startup with over 6 years of
 
 For business inquiries and professional support requests please visit us at https://www.ultralytics.com. 
 
+
 ## Pretrained Checkpoints
 
 |       Model    |  AP<sup>val</sup> | AP<sup>test</sup>    |  AP<sub>50</sub> | Latency<sub>GPU</sub> | FPS<sub>GPU</sub>  | | params | FLOPs |
@@ -26,7 +27,7 @@ For business inquiries and professional support requests please visit us at http
 |     YOLOv5-s ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 33.0 |  | 53.3 | **3.3ms** | **303** | | 7.0B   | 14.0
 |     YOLOv5-m ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 40.8 |  | 61.1 | 5.5ms | 182 | | 25.2B  | 50.2
 |     YOLOv5-l ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 43.7 |  | 64.0 | 9.7ms | 103 | | 61.8B  | 123.1
-|     YOLOv5-x ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | **46.1** |  | **66.1** | 15.8ms | 63 | | 123.1B | 245.7
+|     YOLOv5-x ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | **46.1** |  | **66.2** | 15.8ms | 63 | | 123.1B | 245.7
 |     YOLOv3-SPP ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))  | 44.8 |  | 64.6 | 8.9ms | 112 | | 63.0B  | 118.0
 
 ** AP<sup>test</sup> denotes COCO [test-dev2017](http://cocodataset.org/#upload) server results, all other AP results in the table are from val2017 accuracy.  
@@ -34,12 +35,14 @@ For business inquiries and professional support requests please visit us at http
 ** Latency<sub>GPU</sub> measures average end-to-end latency over 5000 COCO val2017 images with a V100 GPU with batch-size 16, image size 640 and confidence threshold 0.1, and includes image preprocessing, inference, postprocessing and NMS. Average NMS time included in this chart is 1.6ms/image.  
 ** All checkpoints are trained to 300 epochs with default settings and hyperparameters (no autoaugmentation). 
 
+
 ## Requirements
 
 Python 3.7 or later with all `requirements.txt` dependencies installed, including `torch >= 1.5`. To install run:
 ```bash
 $ pip install -U -r requirements.txt
 ```
+
 
 ## Tutorials
 
@@ -96,9 +99,11 @@ To access an up-to-date working environment (with all dependencies including CUD
 - **Google Colab Notebook** with 12 hours of free GPU time: [Google Colab Notebook](https://colab.sandbox.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb)
 - **Docker Image** from https://hub.docker.com/r/ultralytics/yolov5. See [Docker Quickstart Guide](https://github.com/ultralytics/yolov5/wiki/Docker-Quickstart) 
 
+
 ## Citation
 
 [![DOI](https://zenodo.org/badge/146165888.svg)](https://zenodo.org/badge/latestdoi/146165888)
+
 
 ## Contact
 
