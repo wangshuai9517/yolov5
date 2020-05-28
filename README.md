@@ -29,7 +29,7 @@ For business inquiries and professional support requests please visit us at http
 |     YOLOv5-x ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | **46.1** |  | **66.1** | 15.8ms | 63 | | 123.1B | 245.7
 |     YOLOv3-SPP ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))  | 44.8 |  | 64.6 | 8.9ms | 112 | | 63.0B  | 118.0
 
-** <em>val</em> denotes validation results, <em>test-dev</em> denotes [test-dev2017](http://cocodataset.org/#upload) server results. AP<sup>test</sup> is for COCO test-dev2017 accuracy, all other AP results in the table are for val2017 accuracy.  
+** AP<sup>test</sup> denotes COCO [test-dev2017](http://cocodataset.org/#upload) server results, all other AP results in the table are from val2017 accuracy.  
 ** All accuracy numbers are for single-model single-scale without ensemble or test-time augmentation.  
 ** Latency<sub>GPU</sub> measures average end-to-end latency over 5000 COCO val2017 images with a V100 GPU with batch-size 16, image size 640 and confidence threshold 0.1, and includes image preprocessing, inference, postprocessing and NMS. Average NMS time included in this chart is 1.6ms/image.  
 ** All checkpoints are trained to 300 epochs with default settings and hyperparameters (no autoaugmentation). 
