@@ -32,7 +32,7 @@ For business inquiries and professional support requests please visit us at http
 
 ** AP<sup>test</sup> denotes COCO [test-dev2017](http://cocodataset.org/#upload) server results, all other AP results in the table are from val2017 accuracy.  
 ** All accuracy numbers are for single-model single-scale without ensemble or test-time augmentation.  
-** Latency<sub>GPU</sub> measures average end-to-end latency over 5000 COCO val2017 images with a V100 GPU with batch-size 16, image size 640 and confidence threshold 0.1, and includes image preprocessing, inference, postprocessing and NMS. Average NMS time included in this chart is 1.6ms/image.  
+** Latency<sub>GPU</sub> measures end-to-end latency per image averaged over 5000 COCO val2017 images using a V100 GPU with batch-size 16, image size 640 and confidence threshold 0.1, and includes image preprocessing, inference, postprocessing and NMS. Average NMS time included in this chart is 1.6ms/image.  
 ** All checkpoints are trained to 300 epochs with default settings and hyperparameters (no autoaugmentation). 
 
 
