@@ -260,9 +260,11 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                  cache_images=False, single_cls=False):
         try:
             path = str(Path(path))  # os-agnostic
+            parent = str(Path(path).parent) + os.sep
             if os.path.isfile(path):  # file
                 with open(path, 'r') as f:
                     f = f.read().splitlines()
+                    f = [x.replace('./', parent) for x in f if x.startswith('./')]  # local to global path
             elif os.path.isdir(path):  # folder
                 f = glob.iglob(path + os.sep + '*.*')
             else:
@@ -397,7 +399,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
 
             pbar.desc = 'Caching labels %s (%g found, %g missing, %g empty, %g duplicate, for %g images)' % (
                 s, nf, nm, ne, nd, n)
-        assert nf > 0 or n == 40670, 'No labels found in %s. See %s' % (os.path.dirname(file) + os.sep, help_url)
+        assert nf > 0 or n == 20288, 'No labels found in %s. See %s' % (os.path.dirname(file) + os.sep, help_url)
         if not labels_loaded and n > 1000:
             print('Saving labels to %s for faster future loading' % np_labels_path)
             np.save(np_labels_path, self.labels)  # save for next time
