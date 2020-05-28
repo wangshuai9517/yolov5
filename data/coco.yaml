@@ -8,8 +8,9 @@
 
 
 # train and test paths (each *.txt contains a list of images)
-train: ../coco/train2017.txt
-valid: ../coco/val2017.txt
+train: ../coco/train2017.txt  # 118k images
+valid: ../coco/val2017.txt  # 5k images
+# valid: ../coco/images/test2017  # 40k images for submission to https://competitions.codalab.org/competitions/20794
 
 # number of classes
 nc: 80

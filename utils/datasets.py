@@ -397,7 +397,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
 
             pbar.desc = 'Caching labels %s (%g found, %g missing, %g empty, %g duplicate, for %g images)' % (
                 s, nf, nm, ne, nd, n)
-        assert nf > 0, 'No labels found in %s. See %s' % (os.path.dirname(file) + os.sep, help_url)
+        assert nf > 0 or n == 40670, 'No labels found in %s. See %s' % (os.path.dirname(file) + os.sep, help_url)
         if not labels_loaded and n > 1000:
             print('Saving labels to %s for faster future loading' % np_labels_path)
             np.save(np_labels_path, self.labels)  # save for next time
