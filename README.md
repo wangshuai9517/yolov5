@@ -24,13 +24,13 @@ For business inquiries and professional support requests please visit us at http
 
 |       Model    |  AP<sup>val</sup> | AP<sup>test</sup>    |  AP<sub>50</sub> | Latency<sub>GPU</sub> | FPS<sub>GPU</sub>  | | params | FLOPs |
 |----------     |------ |------ |------ | -------- | ------| ------ |------  |  :------: |
-|     YOLOv5-s ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 33.0 |  | 52.7 | **3.3ms** | **303** | | 7.0B   | 14.0
-|     YOLOv5-m ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 40.8 |  | 60.7 | 5.5ms | 182 | | 25.2B  | 50.2
-|     YOLOv5-l ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 43.8 |  | 63.7 | 9.7ms | 103 | | 61.8B  | 123.1
-|     YOLOv5-x ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | **46.5** |  | **66.1** | 15.8ms | 63 | | 123.1B | 245.7
-|     YOLOv3-SPP ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))  | 44.9 |  | 64.3 | 8.9ms | 112 | | 63.0B  | 118.0
+|     YOLOv5-s ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 33.0 | 32.9 | 52.7 | **3.3ms** | **303** | | 7.0B   | 14.0
+|     YOLOv5-m ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 40.8 | 40.8 | 60.7 | 5.5ms | 182 | | 25.2B  | 50.2
+|     YOLOv5-l ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | 43.8 | 44.0 | 63.7 | 9.7ms | 103 | | 61.8B  | 123.1
+|     YOLOv5-x ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))    | **46.5** | **46.6** | **66.1** | 15.8ms | 63 | | 123.1B | 245.7
+|     YOLOv3-SPP ([ckpt](https://drive.google.com/open?id=1Drs_Aiu7xx6S-ix95f9kNsA6ueKRpN2J))  | 44.9 | 44.8 | 64.3 | 8.9ms | 112 | | 63.0B  | 118.0
 
-** AP<sup>test</sup> denotes COCO [test-dev2017](http://cocodataset.org/#upload) server results, all other AP results in the table are from val2017 accuracy.  
+** AP<sup>test</sup> denotes COCO [test-dev2017](http://cocodataset.org/#upload) server results, all other AP results in the table denote val2017 accuracy.  
 ** All accuracy numbers are for single-model single-scale without ensemble or test-time augmentation.  
 ** Latency<sub>GPU</sub> measures end-to-end latency per image averaged over 5000 COCO val2017 images using a V100 GPU with batch-size 16, image size 640 and confidence threshold 0.1, and includes image preprocessing, inference, postprocessing and NMS. Average NMS time included in this chart is 1.6ms/image.  
 ** All checkpoints are trained to 300 epochs with default settings and hyperparameters (no autoaugmentation). 
@@ -46,7 +46,7 @@ $ pip install -U -r requirements.txt
 
 ## Tutorials
 
-* [Train Custom Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data) << recommended
+* [Train Custom Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)
 * [Google Colab Notebook](https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb) with training, testing and testing examples
 * [GCP Quickstart](https://github.com/ultralytics/yolov5/wiki/GCP-Quickstart)
 * [Docker Quickstart Guide](https://github.com/ultralytics/yolov5/wiki/Docker-Quickstart) 
