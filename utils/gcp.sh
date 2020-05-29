@@ -4,12 +4,13 @@
 if [ ! -d ./coco ]
 then
   echo "COCO folder not found. Running startup script."
-  git clone https://github.com/ultralytics/yolov3
-  # git clone -b test --depth 1 https://github.com/ultralytics/yolov3 test  # branch
+  git clone https://github.com/ultralytics/yolov5
+  # git clone -b test --depth 1 https://github.com/ultralytics/yolov5 test  # branch
   # sudo apt-get install zip
   # git clone https://github.com/NVIDIA/apex && cd apex && pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" . --user && cd .. && rm -rf apex
   # sudo conda install -yc conda-forge scikit-image pycocotools
-  python3 -c "from yolov3.utils.google_utils import gdrive_download; gdrive_download('1rrL-Jbc68iHiGjXOYc8u9tKfFiOX21Tn','coco2017.zip')"
+  python3 -c "from yolov5.utils.google_utils import gdrive_download; gdrive_download('1rrL-Jbc68iHiGjXOYc8u9tKfFiOX21Tn','coco2017.zip')"
+  python3 -c "from yolov5.utils.google_utils import gdrive_download; gdrive_download('1Y6Kou6kEB0ZEMCCpJSKStCor4KAReE43','coco2017.zip')"
   sudo docker pull ultralytics/coco:198
 
   # Add 64GB swap
